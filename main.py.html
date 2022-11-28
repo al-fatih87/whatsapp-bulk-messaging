@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #cc7832;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># If user enters a number and it's equal the lucky number, user wins 3 million dollars, else he keeps trying for 2 more times. For each trial, the lucky number updates</span>
+<span class="s0">#But if the user hits jackpot on any trial, the programs ends.</span>
+<span class="s1">print(</span><span class="s2">&quot;This is a guess game with a winning price of $3,000,000 should you guess the right winning number.</span><span class="s3">\n</span><span class="s2">&quot;</span>
+      <span class="s2">&quot;You only have 3 chances before the game is terminated. </span><span class="s3">\n</span><span class="s2">&quot;</span>
+      <span class="s2">&quot;Good luck to you.&quot;</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s2">&quot;-------------------------------------------------------------&quot;</span><span class="s1">)</span>
+<span class="s1">max_trial = </span><span class="s4">3 </span><span class="s0">#number of trial in the game</span>
+<span class="s1">user_name = input(</span><span class="s2">&quot;What is your first name?</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s1">) </span><span class="s0"># user enters their first name</span>
+<span class="s1">lucky_num = len(user_name)*</span><span class="s4">9</span><span class="s1">+</span><span class="s4">3  </span><span class="s0"># calculation of lucky number with character length of user name</span>
+
+<span class="s3">while </span><span class="s1">max_trial &gt; </span><span class="s4">0</span><span class="s1">: </span><span class="s0"># this repeat the trial for 3 times as long as trial time is greater than 0 (3 times completed)</span>
+    <span class="s1">lucky_num += </span><span class="s4">21  </span><span class="s0"># lucky number is incremented at the next trial</span>
+    <span class="s1">user_num = input(</span><span class="s2">&quot;Enter a number for jackpot</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s1">)  </span><span class="s0"># user enters guess number</span>
+    <span class="s1">guess_num = int(user_num)  </span><span class="s0"># converting user guess input number (string) to integer</span>
+    <span class="s3">if </span><span class="s1">guess_num == lucky_num: </span><span class="s0"># logic for jackpot</span>
+        <span class="s1">print(</span><span class="s2">&quot;Bingo! &quot; </span><span class="s1">+ user_name + </span><span class="s2">&quot;, You just won a jackpot of $3,000,000</span><span class="s3">\n</span><span class="s2">&quot;</span>
+                                      <span class="s2">&quot;We shall wire transfer your money to you right away.&quot;</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s2">&quot;++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++&quot;</span><span class="s1">) </span><span class="s0"># user bank details collected</span>
+        <span class="s1">user_bank = input(</span><span class="s2">&quot;Enter your Bank name</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s1">)</span>
+        <span class="s1">user_account_num = input(</span><span class="s2">&quot;Enter account number</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s1">)</span>
+        <span class="s1">user_account_name = input(</span><span class="s2">&quot;Enter Full bank name</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s1">)</span>
+        <span class="s1">user_country = input(</span><span class="s2">&quot;Enter bank country</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s2">&quot;processing.....&quot;</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s2">&quot;*****************************************************************&quot;</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s2">'Payment successfully processed with the following details:</span><span class="s3">\n</span><span class="s2">'</span>
+        <span class="s2">'Amount: $3,000,000.00</span><span class="s3">\n</span><span class="s2">'</span>
+        <span class="s2">&quot;Bank: &quot; </span><span class="s1">+ user_bank + </span><span class="s2">'</span><span class="s3">\n</span><span class="s2">'</span>
+        <span class="s2">&quot;Account Name: &quot;</span><span class="s1">+ user_account_name + </span><span class="s2">'</span><span class="s3">\n</span><span class="s2">'</span>
+        <span class="s2">&quot;Country: &quot; </span><span class="s1">+ user_country)</span>
+        <span class="s1">print(</span><span class="s2">&quot;*****************************************************************&quot;</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s2">&quot;Money should arrive in your account in 48hrs. Consult with your bank.</span><span class="s3">\n</span><span class="s2">&quot;</span>
+              <span class="s2">&quot;Once again,congratulations to you, &quot; </span><span class="s1">+ user_account_name)</span>
+        <span class="s3">break</span>
+    <span class="s3">else</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">&quot;Thank you, &quot; </span><span class="s1">+ user_name + </span><span class="s2">&quot;, but you missed. Your lucky number on the previous attempt was &quot; </span><span class="s1">+ str(lucky_num) + </span><span class="s2">&quot;. Please, try agian.&quot;</span><span class="s1">)</span>
+        <span class="s1">max_trial -= </span><span class="s4">1</span>
+        <span class="s3">if </span><span class="s1">max_trial == </span><span class="s4">1</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s2">&quot;your have &quot; </span><span class="s1">+ str(max_trial) + </span><span class="s2">&quot; attempt(s) remaining (your very last attempt)&quot;</span><span class="s1">)</span>
+        <span class="s3">else</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s2">&quot;your have &quot; </span><span class="s1">+ str(max_trial) + </span><span class="s2">&quot; attempt(s) remaining&quot;</span><span class="s1">)</span>
+<span class="s3">if </span><span class="s1">max_trial == </span><span class="s4">0</span><span class="s1">:</span>
+    <span class="s1">print(</span><span class="s2">&quot;*****************************************************************&quot;</span><span class="s1">)</span>
+    <span class="s1">print(</span><span class="s2">&quot;Dear &quot; </span><span class="s1">+ user_name + </span><span class="s2">&quot;, your chances are over, and we regret that you lost. Try again.&quot;</span><span class="s1">)</span></pre>
+</body>
+</html>
